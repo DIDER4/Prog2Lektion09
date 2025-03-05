@@ -24,8 +24,12 @@ public class MineField extends GridPane {
                 label.setFont(Font.font(20));
                 label.setUserData(new Point(inner, outer));
                 label.textProperty().bind(Controller.getField(inner, outer));
-                label.setOnMouseClicked(event
-                        -> Controller.handle((Point)((Label)event.getSource()).getUserData(), event.getButton()));
+                label.setOnMouseClicked(event -> {
+                    Controller.handle((Point)((Label)event.getSource()).getUserData(), event.getButton());
+                });
+//                label.setOnMouseClicked(event -> {
+//                    Controller.fjernFlag((Point)((Label)event.getSource()).getUserData(), event.getButton());
+//                });
                 this.add(label, inner, outer);
             }
         }

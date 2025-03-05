@@ -12,7 +12,15 @@ public class Main {
     }
 
     private static double avarageMajorDiagonal(double[][] input) {
-        return 0;
+        double sum = 0;
+        int count = 0;
+        for (int i = 0; i < input.length; i++) { // input.length beregner antal rækker
+            if (i < input[i].length) { // input[i].length beregner antal kolonner i række i
+                sum += input[i][i]; // input[i][i] beregner diagonalen
+                count++;
+            }
+        }
+        return sum / count;
     }
 
 
